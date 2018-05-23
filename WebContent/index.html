@@ -431,7 +431,7 @@
 <script>
 function myMap() {
 var myCenter = new google.maps.LatLng(37.501137,127.03943);
-var mapProp = {center:myCenter, zoom:15, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var mapProp = {center:myCenter, zoom:15, scrollwheel:true, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 var marker = new google.maps.Marker({position:myCenter, title:"멀캠투어(MULCAM TOUR)"});
 var infowindow = new google.maps.InfoWindow({content:"<h2>멀캠투어</h2><br>역삼역 도보 3분거리", maxWidth:300});
