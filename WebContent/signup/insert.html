@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>회원가입</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #cccccc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+    padding: 100px;
+    background-color: white;
+}
+
+/* Full-width input fields */
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+    <h1><img src="../img/logo.gif"> 회원가입</h1>
+    <p>회원가입하기 위해 양식을 모두 작성해주세요. <br>
+    검토후, 20대가 아닐 경우 회원가입이 거절됩니다.<br></p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="이메일을 입력해주세요." name="email" required>
+
+    <label for="tel"><b>전화번호</b></label>
+    <input type="tel" placeholder="전화번호를 입력해주세요." name="tel" required>
+
+    <label for="name"><b>이름</b></label>
+    <input type="name" placeholder="이름을 입력해주세요." name="name" required>
+
+    <label for="date"><b>생년월일</b></label>
+    <input type="date" placeholder="생년월일을 입력해주세요." name="date" required>
+
+    <label for="psw"><b>비밀번호</b></label>
+    <input type="password" placeholder="비밀번호를 입력해주세요." name="psw" required>
+
+    <label for="psw-repeat"><b>비밀번호 확인</b></label>
+    <input type="password" placeholder="비밀번호를 다시한번 더 입력해주세요." name="psw-repeat" required>
+    <hr>
+    <p>회원가입시 우리 회사의 <a href="#">규정과 약관</a>에 동의한 것으로 간주됩니다.</p>
+
+    <button type="submit" class="registerbtn">회원가입</button>
+  </div>
+
+  <div class="container signin">
+    <p>이미 우리 멀캠투어 회원이세요? <a href="./login.html">로그인</a>하러 가기.</p>
+  </div>
+</form>
+
+</body>
+</html>

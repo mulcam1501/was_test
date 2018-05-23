@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>멀캠투어에 오신것을 환영합니다.</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #777;
+  }
+  h3, h4 {
+      margin: 10px 0 30px 0;
+      letter-spacing: 10px;
+      font-size: 20px;
+      color: #111;
+  }
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+      /*
+      -webkit-filter: grayscale(90%);
+      filter: grayscale(90%); /* make all photos black and white */
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #006699;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {font-style: italic;}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #339966;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #339966;
+      background-color: #fff;
+      color: #000;
+  }
+  .modal-header, h4, .close {
+      background-color: #339966;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      /*-webkit-filter: grayscale(100%);
+      filter: grayscale(100%)*/;
+  }
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+      background-color: #006699;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+      color: #fff !important;
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #006699;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage"><img src="./img/logohead.png"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">홈</a></li>
+        <li><a href="#band">소개</a></li>
+        <li><a href="#tour">여행상품 구매</a></li>
+        <li><a href="#" onclick="window.open('./board/index.html', '_blank', 'width=800 height=600')">게시판</a></li>
+        <li><a href="#" onclick="window.open('./signup/login.html', '_blank', 'width=700 height=900')">로그인</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">회원정보
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="window.open('./signup/insert.html', '_blank', 'width=700 height=900')">회원가입</a></li>
+            <li><a href="#">정보수정</a></li>
+            <li><a href="#">구입목록</a></li>
+            <li><a href="#">회원탈퇴</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">오시는 길</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="./img/swiss.jpg" alt="New York" width="1200" height="700">
+        <div class="carousel-caption">
+          <b>
+          <h3>SWISS</h3>
+          <p>스위스에서 스카이다이빙과 패러글라이딩 그리고 융프라우에서 최고의 광경을!</p>
+        </b>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./img/paris.jpg" alt="Chicago" width="1200" height="700">
+        <div class="carousel-caption">
+          <b>
+          <h3>PARIS</h3>
+          <p>낭만의 도시 파리에서 낭만적인 추억을!</p>
+        </b>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./img/ny.jpg" alt="Los Angeles" width="1200" height="700">
+        <div class="carousel-caption">
+          <b>
+          <h3>NEW YORK</h3>
+          <p>최고의 가이드가 광대한 미국 전지역을 전용버스로 여행을 도와드립니다!</p>
+        </b>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"><img src ="./img/arrow-left.png" width="50" height="50"></span>
+      <!--<span class="sr-only">Previous</span>-->
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"><img src ="./img/arrow-right.png" width="50" height="50"></span>
+      <!--<span class="sr-only">Next</span>-->
+    </a>
+</div>
+
+<!-- Container (The Band Section) -->
+<div id="band" class="container text-center">
+  <h3>MULCAM TOUR</h3>
+  <p><em>20대와 대학생만을 위한 장거리, 장기간 배낭여행패키지</em></p>
+  <p>국경없이 전 세계를 여행다운 젊은 여행을 자유롭게 여행하기 위해 기획되었습니다.
+    젊은이들만의 건전한 배낭여행 문화를 이끌어 가는데 앞장서고 끊임없는 도전으로
+    청춘들만의 순수하고 열정적이며 진솔한 <b>진짜 여행</b>을 만들어가겠습니다.</p>
+
+    <p>배낭여행을 하며, 젊은이들에게 세계여행은 중요한 경험이자 자산이 된다는 것을
+    깊이 깨닫고, 젊은이들을 위한 순수 여행 단체를 찾기 힘든 여행시장에
+  젊은이들만의 여행문화를 만들어가겠습니다.</p>
+
+  <p>젊은 시절 <b>진짜 여행</b>을 하고 싶다면 지금 멀캠투어를 신청하세요.</p>
+
+  <br>
+</div>
+
+<!-- Container (TOUR Section) -->
+<div id="tour" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">여행상품 구매</h3>
+    <p class="text-center">20대만이 누릴 수 있는 합리적인 배낭여행패키지가 있습니다.<br>선착순 조기 마감이 될 수도 있습니다.<br></p>
+    <ul class="list-group">
+      <li class="list-group-item">2018년 6월 유럽일주(30일) <span class="label label-danger">마감!</span></li>
+      <li class="list-group-item">2018년 6월 미국일주(30일) <span class="label label-danger">마감!</span></li>
+      <li class="list-group-item">2018년 6월 지중해일주(20일) <span class="label label-danger">마감!</span></li>
+      <li class="list-group-item">2018년 7월 유럽일주(30일) <span class="badge">잔여 : 9</span></li>
+      <li class="list-group-item">2018년 7월 미국일주(30일) <span class="badge">잔여 : 10</span></li>
+      <li class="list-group-item">2018년 7월 지중해일주(20일) <span class="label label-danger">마감!</span></li>
+      <li class="list-group-item">2018년 8월 유럽일주(30일) <span class="badge">잔여 : 11</span></li>
+      <li class="list-group-item">2018년 8월 미국일주(30일) <span class="label label-danger">마감!</span></li>
+      <li class="list-group-item">2018년 8월 지중해일주(20일) <span class="badge">잔여 : 1</span></li>
+    </ul>
+
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="./img/swiss.jpg" alt="Paris" width="400" height="300">
+          <p><strong>2018년 7월 유럽일주</strong></p>
+          <p>부가세포함 : 4,000,000원</p>
+          <button class="btn" data-toggle="modal" data-target="#myModal">지금 구매</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="./img/ny.jpg" alt="New York" width="400" height="300">
+          <p><strong>2018년 8월 유럽일주</strong></p>
+          <p>부가세포함 : 4,000,000원</p>
+          <button class="btn" data-toggle="modal" data-target="#myModal">지금 구매</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="./img/usa.jpg" alt="San Francisco" width="400" height="300">
+          <p><strong>2018년 7월 미국일주</strong></p>
+          <p>부가세포함 : 3,500,000원</p>
+          <button class="btn" data-toggle="modal" data-target="#myModal">지금 구매</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> 여행상품 구매</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <b><center>지금 구입하시면 10%의 할인혜택을 드립니다!</center></b><br><br>
+              <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span>전화번호</label>
+              <input type="tel" class="form-control" id="psw" placeholder="전화번호를 입력하세요">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> 아이디</label>
+              <input type="text" class="form-control" id="usrname" placeholder="아이디를 입력하세요">
+            </div>
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> 비밀번호</label>
+              <input type="text" class="form-control" id="usrname" placeholder="비밀번호를 입력하세요">
+            </div>
+              <button type="submit" class="btn btn-block">구입하기!
+                <span class="glyphicon glyphicon-ok"></span>
+              </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span> 취소 </button>
+          <p>혹시 도움이 필요하세요? <a href="#">헬프데스크로 이동</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container">
+
+  <br>
+  <h3 class="text-center">자주 묻는 질문 FAQ</h3>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">결제</a></li>
+    <li><a data-toggle="tab" href="#menu1">환불</a></li>
+    <li><a data-toggle="tab" href="#menu2">회원</a></li>
+    <li><a data-toggle="tab" href="#menu3">여행</a></li>
+    <li><a data-toggle="tab" href="#menu4">코스</a></li>
+    <li><a data-toggle="tab" href="#menu5">기타</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h2>결제 관련 FAQ</h2>
+      <p>준비 중 입니다.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h2>환불 관련 FAQ</h2>
+      <p>준비 중 입니다.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h2>회원 관련 FAQ</h2>
+      <p>준비 중 입니다.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h2>여행 관련 FAQ</h2>
+      <p>준비 중 입니다.</p>
+    </div>
+    <div id="menu4" class="tab-pane fade">
+      <h2>코스 관련 FAQ</h2>
+      <p>준비 중 입니다.</p>
+    </div>
+    <div id="menu5" class="tab-pane fade">
+      <h2>기타 관련 FAQ</h2>
+      <p>준비 중 입니다.</p>
+    </div>
+  </div>
+
+
+
+  <br>
+  <br>
+  <br>
+
+
+  <h3 class="text-center">오시는 길</h3>
+  <p class="text-center"><em>여행상품과 관련된 질문은 언제든 환영입니다!</em></p>
+  <br>
+  <br>
+
+  <div class="row">
+    <div class="col-md-4">
+      <p><img src="./img/logo.gif"></p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>서울특별시 강남구 역삼동 테헤란로 212</p>
+      <p><span class="glyphicon glyphicon-phone"></span>02-1588-3357</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: info@mulcamtour.com</p>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="성함을 입력해주세요" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="이메일을 입력해주세요" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="문의사항을 자세히 남겨주세요" rows="5"></textarea>
+      <br>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <button class="btn pull-right" type="submit">전송</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Add Google Maps -->
+<div id="googleMap"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(37.501137,127.03943);
+var mapProp = {center:myCenter, zoom:15, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({position:myCenter, title:"멀캠투어(MULCAM TOUR)"});
+var infowindow = new google.maps.InfoWindow({content:"<h2>멀캠투어</h2><br>역삼역 도보 3분거리", maxWidth:300});
+google.maps.event.addListener(marker, 'mouseover', function() {infowindow.open(map, marker);});
+marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA02mvImASRakQmUWRfIXIAcUc7iRioQE&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"><img src ="./img/arrow-up.png" width="30" height="30"></span>
+  </a><br><br>
+  <p> <a href="http://www.multicampus.com/" data-toggle="tooltip" title="멀캠투어에 방문해주세요"> copyright 멀캠투어(MULCAM TOUR) X 멀티캠퍼스 1501호 심영훈 all rights reserved.</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
